@@ -39,8 +39,6 @@ MAKE_WEBHOOK_URL = "https://hook.make.com/tu_webhook_id"
 - La key de Gemini se consigue gratis en [aistudio.google.com/apikey](https://aistudio.google.com/apikey).
 - El webhook de Make se explica en la sección de abajo. Si todavía no lo configuraste, podés dejar `MAKE_WEBHOOK_URL` vacío: la app funciona igual, solo se deshabilita el envío por email.
 
-Si lo subís a Streamlit Community Cloud, estas mismas variables se cargan en **Settings → Secrets** de la app, no hace falta el archivo local.
-
 ### 5. Ejecutá el programa
 ```bash
 streamlit run app.py
