@@ -9,7 +9,7 @@ CentinelaID permite chequear si una contraseña apareció en alguna filtración 
 La app tiene una interfaz web hecha con **Streamlit**, pensada para que cualquier persona pueda usarla desde un link, sin instalar nada ni tocar una terminal. Además, el usuario puede elegir cómo quiere recibir el informe: **en pantalla** o **por email** (usando una automatización armada en **Make**).
 
 ### 🌐 Demo en vivo
-👉 [Probar CentinelaID](TU_LINK_DE_STREAMLIT_ACA)
+👉 [Probar CentinelaID](https://centinelaid-8dutjkgdqofatsuzt6rjgd.streamlit.app/)
 
 ## 🚀 Cómo ejecutarlo
 
