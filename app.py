@@ -110,7 +110,7 @@ password = st.text_input(
 )
 
 # --- Opción de enviar por email ---
-enviar_por_email = st.checkbox("📧 Quiero recibir el informe por email")
+enviar_por_email = st.checkbox("📧 Prefiero recibir el informe por email (en vez de verlo acá)")
 email = None
 if enviar_por_email:
     email = st.text_input("Ingresá tu email:")
@@ -137,18 +137,20 @@ if st.button("Chequear contraseña"):
             else:
                 st.error(f"🚨 Esta contraseña apareció **{veces:,}** veces en filtraciones conocidas.")
 
-            # Generar informe con IA
+            # Generar informe con IA (se genera siempre, pero se entrega por un solo canal)
             with st.spinner("Generando informe con IA..."):
                 informe = generar_informe(veces)
 
-            
-            st.markdown(informe)
-
-            # Enviar por email si el usuario lo pidió
             if enviar_por_email and email:
+                # El usuario eligió recibirlo por email: no lo mostramos en pantalla
                 with st.spinner("Enviando informe por email..."):
                     exito, mensaje = enviar_informe_email(email, veces, informe)
                     if exito:
                         st.success(mensaje)
                     else:
                         st.error(mensaje)
+                        st.info("No pudimos enviarlo por email, así que te lo mostramos acá:")
+                        st.markdown(informe)
+            else:
+                # El usuario quiere verlo directamente en la app
+                st.markdown(informe)
